@@ -28,12 +28,25 @@ class Bubble {
      * SUMMATIVE OPTIONAL Add more than two constructors for varying levels of
      * customization
      */
-
+public Bubble(Sketch sketch) {
+        s = sketch;
+        diameter = s.random(50, 150); 
+        x = s.random(diameter / 2, s.width - diameter / 2);
+        y = s.random(diameter / 6, s.height - diameter / 4);
+        col = 12;
+        s.randomColor (true);
+        borderColor = 120;
+        col = 200;
+        speedX = s.random(-4,-8);
+        speedY = s.random(-5,-8);
+}
     /*
      * SUMMATIVE REQUIRED Add a method called `getRadius()` that returns a float
      * representing the radius of the bubble
      */
-
+    public int getRadius() {
+      return  (int)diameter / 2;
+    }
     /** Draws the bubble. */
     public void drawBubble() {
         s.stroke(borderColor);

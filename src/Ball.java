@@ -1,4 +1,5 @@
 /** MAKE SURE TO READ THE README CAREFULLY BEFORE YOU BEGIN EDITING THIS CODE */
+import java.awt.Color;
 class Ball {
     private Sketch s;
     private float diameter;
@@ -7,7 +8,7 @@ class Ball {
     private int col;
     private float speedY;
     private float speedX;
-
+    
     /**
      * The default constructor generates random values for most of the instance
      * variables.
@@ -17,7 +18,11 @@ class Ball {
         diameter = s.random(50, 150); // random diameter between 50 and 150
         x = s.random(diameter / 2, s.width - diameter / 2);
         y = s.random(diameter / 2, s.height - diameter / 2);
-
+        s.randomColor (false);
+        speedX = s.random(3,6);
+        speedY = s.random(5,8);
+    }
+      
         /*
          * SUMMATIVE REQUIRED use the randomColor() method in the sketch to set default
          * balls to a solid random color
@@ -27,18 +32,22 @@ class Ball {
          * SUMMATIVE REQUIRED Set speedX and speedY to reasonable defaults. Random
          * numbers could be nice, but are not required.
          */
-    }
+    
 
     /** This constructor lets you specify all of the ball instance variables */
     public Ball(Sketch s, float X, float Y, float ballDiam, int ballColor, float sx, float sy) {
         /* SUMMATIVE REQUIRED Fill out this constructor */
+
     }
 
     /*
      * SUMMATIVE REQUIRED Add a method called `getRadius()` that returns a float
      * representing the radius of the ball
      */
+    public int getRadius() {
+      return  (int)diameter / 2;
 
+    } 
     /*
      * SUMMATIVE OPTIONAL Add a method called `stop()` that sets the ball speed to
      * 0, and another one called `start()` that starts it moving again, either at

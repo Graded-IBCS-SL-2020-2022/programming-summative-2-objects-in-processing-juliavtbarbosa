@@ -13,6 +13,8 @@ public class Sketch extends PApplet {
      */
 
     Ball b1;
+    Bubble bb1;
+    Snowflake sn1;
 
     public void settings() {
         size(500, 500);
@@ -26,8 +28,11 @@ public class Sketch extends PApplet {
      * I have done the first ball for you.
      */
     public void setup() {
-        frameRate(30);
+        frameRate(60);
         b1 = new Ball(this);
+        bb1 = new Bubble (this); 
+        sn1 = new Snowflake (this);
+        
     }
 
     public void draw() {
@@ -36,6 +41,10 @@ public class Sketch extends PApplet {
         /* SUMMATIVE REQUIRED Draw and move all balls, snowflakes, and bubbles */
         b1.drawBall();
         b1.moveBall();
+        bb1.drawBubble();
+        bb1.moveBubble();
+        sn1.drawSnowflake();
+        sn1.moveSnowflake();
     }
 
     /**
